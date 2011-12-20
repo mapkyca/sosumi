@@ -91,7 +91,8 @@
         }
 
         // This hasn't been tested (for obvious reasons). Please let me know if it does/doesn't work...
-        public function remoteWipe($device_num = 0)
+        // DISABLED: Disabled just incase it gets accidently called, kinda don't want to risk it for now! 
+        /*public function remoteWipe($device_num = 0)
         {
             $post = sprintf('{"clientContext":{"appName":"FindMyiPhone","appVersion":"1.3","buildVersion":"145","deviceUDID":"0000000000000000000000000000000000000000","inactiveTime":5911,"osVersion":"3.2","productType":"iPad1,1","selectedDevice":"%s","shouldLocate":false},"device":"%s","oldPasscode":"","passcode":"%s","serverContext":{"callbackIntervalInMS":3000,"clientId":"0000000000000000000000000000000000000000","deviceLoadStatus":"203","hasDevices":true,"lastSessionExtensionTime":null,"maxDeviceLoadTime":60000,"maxLocatingTime":90000,"preferredLanguage":"en","prefsUpdateTime":1276872996660,"sessionLifespan":900000,"timezone":{"currentOffset":-25200000,"previousOffset":-28800000,"previousTransition":1268560799999,"tzCurrentName":"Pacific Daylight Time","tzName":"America/Los_Angeles"},"validRegion":true}}',
                                 $this->devices[$device_num]->id, $this->devices[$device_num]->id, $passcode);
@@ -99,7 +100,7 @@
             $this->iflog('Sending remote wipe...');
             $this->curlPost("/fmipservice/device/{$this->username}/remoteWipe", $post);
             $this->iflog('Remote wipe sent');
-        }
+        }*/
 
         private function updateDevices()
         {
